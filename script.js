@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Perform calculation (addition)
-    const sum = a + b;
+    const sum = 2*(a + b);
 
     // Update the page
     resultDiv.textContent = `Result: ${sum}`;

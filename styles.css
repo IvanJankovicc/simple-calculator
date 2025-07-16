@@ -1,33 +1,91 @@
+/* styles.css */
+
+/* 1. Full-page gradient background */
 body {
-  font-family: sans-serif;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background: #f5f5f5;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6b73ff, #000dff);
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* 2. Card container */
 .calculator {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 360px;
   text-align: center;
+  transition: transform 0.2s;
+}
+.calculator:hover {
+  transform: translateY(-4px);
 }
 
-.calculator input {
-  width: 100px;
-  padding: 0.5rem;
-  margin: 0.5rem;
+/* 3. Heading style */
+.calculator h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #333;
 }
 
+/* 4. Inputs & select */
+.calculator input,
+.calculator select {
+  width: calc(50% - 0.5rem);
+  padding: 0.75rem;
+  margin: 0.25rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+.calculator input:focus,
+.calculator select:focus {
+  outline: none;
+  border-color: #6b73ff;
+}
+
+/* 5. Button */
 .calculator button {
-  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #6b73ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.calculator button:hover {
+  background: #000dff;
+}
+.calculator button:active {
+  transform: scale(0.98);
 }
 
+/* 6. Result display */
 #result {
-  margin-top: 1rem;
-  font-weight: bold;
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  color: #444;
+  min-height: 1.5em;
+}
+
+/* 7. Responsive tweaks */
+@media (max-width: 400px) {
+  .calculator {
+    padding: 1.5rem 1rem;
+  }
+  .calculator input,
+  .calculator select {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 }
